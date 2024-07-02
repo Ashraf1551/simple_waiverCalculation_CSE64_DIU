@@ -1,4 +1,10 @@
-// script.js
+function clearWaiverInput() {
+    document.getElementById('waiverPercentage').value = '';
+}
+
+function clearWaiverSelect() {
+    document.getElementById('waiverPercentageSelect').value = '';
+}
 
 function calculatePayment() {
     // Constants

@@ -1,8 +1,6 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #1A2426; /* Light gray background */
+    background-color: #1A2426;
     margin: 0;
     padding: 0;
 }
@@ -10,21 +8,21 @@ body {
 .container {
     max-width: 600px;
     margin: 20px auto;
-    background-color: #fff; /* White container background */
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
-    color: #333; /* Dark gray heading color */
+    color: #333;
 }
 
 .breaking-news {
     overflow: hidden;
-    background: #1A2426; /* Dark background color for breaking news */
-    color: #fff; /* White text color for breaking news */
+    background: #1A2426;
+    color: #fff;
     font-weight: bold;
     margin: 20px 0;
     border-radius: 5px;
@@ -34,7 +32,7 @@ h1 {
     display: inline-block;
     padding: 10px;
     white-space: nowrap;
-    animation: slide 10s linear infinite; /* Example animation for breaking news */
+    animation: slide 10s linear infinite;
 }
 
 @keyframes slide {
@@ -61,37 +59,43 @@ h1 {
     width: 150px;
     padding: 8px;
     margin-right: 10px;
-    border: 1px solid #ccc; /* Gray border for input fields */
+    border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .input-section input[type="number"] {
-    -moz-appearance: textfield; /* Firefox specific styling for number input */
+    -moz-appearance: textfield;
 }
 
 .input-section button {
     padding: 10px 20px;
-    background-color: #007bff; /* Blue background color for button */
-    color: #fff; /* White text color for button */
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .input-section button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
+}
+
+.or-section {
+    text-align: center;
+    font-weight: bold;
+    margin: -10px 0 10px 0;
 }
 
 .results-section {
     margin-top: 20px;
-    border-top: 1px solid #ccc; /* Gray border on top of results section */
+    border-top: 1px solid #ccc;
     padding-top: 10px;
 }
 
 .results-section p {
     margin: 5px 0;
-    line-height: 1.5; /* Improved spacing between result paragraphs */
+    line-height: 1.5;
 }
 
 .author-section {
@@ -102,5 +106,5 @@ h1 {
 .author-section p {
     margin: 10px 0;
     font-size: 14px;
-    color: #555; /* Gray text color */
+    color: #555;
 }
