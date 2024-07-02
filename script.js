@@ -1,11 +1,20 @@
+// script.js
+
 function calculatePayment() {
     // Constants
     const registrationFees = 20250; // Existing registration fees (20,250)
     const totalTuitionFees = 103200; // Total tuition fees
     const initialPayment = 12000; // Amount paid at the time of registration (12,000)
 
-    // Get input value
-    const waiverPercentage = document.getElementById('waiverPercentage').value;
+    // Get input values
+    let waiverPercentage = document.getElementById('waiverPercentage').value;
+    const selectedPercentage = document.getElementById('waiverPercentageSelect').value;
+
+    // Check if waiverPercentage is empty (null or empty string)
+    if (!waiverPercentage && waiverPercentage !== 0) {
+        // If waiverPercentage is empty, use the selectedPercentage from dropdown
+        waiverPercentage = selectedPercentage;
+    }
 
     // Validate input (although HTML 'number' input should restrict non-numeric input)
     if (waiverPercentage === '' || isNaN(waiverPercentage)) {
@@ -13,7 +22,10 @@ function calculatePayment() {
         return;
     }
 
-    // Calculate waiver amount and remaining fees
+    // Convert waiverPercentage to a number
+    waiverPercentage = parseFloat(waiverPercentage);
+
+    // Calculate waiver amount and remaining fees based on selected percentage
     const waiverAmount = totalTuitionFees * (waiverPercentage / 100);
     const remainingTuitionAfterWaiver = totalTuitionFees - waiverAmount;
     const remainingFees = remainingTuitionAfterWaiver - initialPayment;
