@@ -44,19 +44,40 @@ h1 {
     }
 }
 
+.semester-selection {
+    margin-bottom: 20px;
+}
+
+.semester-selection label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.semester-selection select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 .input-section {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
 }
 
-.input-section label {
+.input-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.input-group label {
     font-weight: bold;
     margin-right: 10px;
 }
 
-.input-section input, .input-section select {
-    width: 150px;
+.input-group input, .input-group select {
+    width: 100%;
     padding: 8px;
     margin-right: 10px;
     border: 1px solid #ccc;
@@ -64,11 +85,7 @@ h1 {
     box-sizing: border-box;
 }
 
-.input-section input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-.input-section button {
+.input-group button {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -77,14 +94,20 @@ h1 {
     cursor: pointer;
 }
 
-.input-section button:hover {
+.input-group button:hover {
     background-color: #0056b3;
 }
 
 .or-section {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
     font-weight: bold;
-    margin: -10px 0 10px 0;
+    margin-right: 20px;
 }
 
 .results-section {
