@@ -3,13 +3,6 @@ body {
     background-color: #1A2426;
     margin: 0;
     padding: 0;
-}
-
-.container {body {
-    font-family: Arial, sans-serif;
-    background-color: #1A2426;
-    margin: 0;
-    padding: 0;
     color: #333;
 }
 
@@ -100,6 +93,7 @@ h1 {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center items horizontally */
 }
 
 .input-group label {
@@ -118,18 +112,36 @@ h1 {
     box-sizing: border-box;
 }
 
-.input-group button {
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add margin to place buttons lower */
+}
+
+.button-group button {
     padding: 12px 24px;
-    background-color: #1A2426;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin: 0 5px;
 }
 
-.input-group button:hover {
-    background-color: #333;
+.button-group button:first-child {
+    background-color: #007bff; /* Blue color for Calculate button */
+}
+
+.button-group button:first-child:hover {
+    background-color: #0056b3; /* Darker blue on hover for Calculate button */
+}
+
+.button-group button:last-child {
+    background-color: #333; /* Black color for Reset button */
+}
+
+.button-group button:last-child:hover {
+    background-color: #555; /* Lighter black on hover for Reset button */
 }
 
 .or-section {
@@ -165,6 +177,12 @@ h1 {
     margin: 10px 0;
     font-size: 14px;
     color: #555;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 @media (max-width: 600px) {
@@ -186,9 +204,30 @@ h1 {
         padding: 6px;
     }
 
-    .input-group button {
+    .button-group {
+        margin-top: 20px; /* Adjust for mobile */
+    }
+
+    .button-group button {
         padding: 12px 24px;
         font-size: 16px;
+        margin: 0 5px;
+    }
+
+    .button-group button:first-child {
+        background-color: #007bff;
+    }
+
+    .button-group button:first-child:hover {
+        background-color: #0056b3;
+    }
+
+    .button-group button:last-child {
+        background-color: #333;
+    }
+
+    .button-group button:last-child:hover {
+        background-color: #555;
     }
 
     .or-section {
@@ -204,174 +243,5 @@ h1 {
     .course-list {
         font-size: 16px; /* Adjusted font size for mobile */
         padding-left: 0; /* Remove padding for mobile */
-    }
-}
-
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-}
-
-.breaking-news {
-    overflow: hidden;
-    background: #1A2426;
-    color: #fff;
-    font-weight: bold;
-    margin: 20px 0;
-    border-radius: 5px;
-    font-size: 16px; /* Increased font size for breaking news on smaller screens */
-}
-
-.news-content {
-    display: inline-block;
-    padding: 10px;
-    white-space: nowrap;
-    animation: slide 10s linear infinite;
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.semester-selection {
-    margin-bottom: 20px;
-}
-
-.semester-selection label {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.semester-selection select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px; /* Increased font size for select on smaller screens */
-}
-
-.input-section {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column; /* Stack input groups vertically on smaller screens */
-    align-items: center;
-}
-
-.input-group {
-    margin-bottom: 10px; /* Increase space between input groups */
-    display: flex;
-    align-items: center;
-}
-
-.input-group label {
-    font-weight: bold;
-    margin-right: 10px;
-    font-size: 14px; /* Increased font size for labels on smaller screens */
-}
-
-.input-group input, .input-group select {
-    width: calc(100% - 120px); /* Adjust the width based on your design needs */
-    padding: 8px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px; /* Increased font size for inputs/selects on smaller screens */
-    box-sizing: border-box;
-}
-
-.input-group button {
-    padding: 12px 24px; /* Increased button padding for easier tapping on smaller screens */
-    background-color: #1A2426; /* Match the background color with the body */
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px; /* Increased font size for buttons on smaller screens */
-}
-
-.input-group button:hover {
-    background-color: #333;
-}
-
-.or-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1A2426; /* Match the background color with the body */
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: bold;
-    margin: 20px 0; /* Add margin to create space around the 'OR' section */
-    font-size: 14px; /* Increased font size for 'OR' section on smaller screens */
-}
-
-.results-section {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-}
-
-.results-section p {
-    margin: 5px 0;
-    line-height: 1.5;
-}
-
-.author-section {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.author-section p {
-    margin: 10px 0;
-    font-size: 14px;
-    color: #555;
-}
-
-/* Media Query for smartphones */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px; /* Reduce padding for smaller screens */
-        max-width: 100%; /* Full width on smaller screens */
-    }
-
-    .input-group {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-    .input-group input, .input-group select {
-        width: 100%; /* Full width inputs/selects on smaller screens */
-        margin-right: 0; /* Remove right margin on smaller screens */
-        margin-bottom: 10px; /* Add bottom margin to separate input elements */
-    }
-
-    .input-group button {
-        width: 100%; /* Full width button on smaller screens */
-        padding: 12px; /* Adjust padding for better touch interaction */
-        font-size: 16px; /* Increased font size for buttons on smaller screens */
-    }
-
-    .or-section {
-        font-size: 14px; /* Increase font size for 'OR' section */
-        padding: 4px 8px; /* Adjust padding for smaller screens */
-        margin: 20px 0; /* Adjust margin for smaller screens */
-    }
-
-    .breaking-news {
-        font-size: 14px; /* Increase font size for breaking news */
     }
 }

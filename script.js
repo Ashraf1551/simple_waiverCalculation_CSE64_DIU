@@ -9,31 +9,54 @@ const semesterData = {
             "CSE225-Data Communication(3)",
             "CSE226-Numerical Methods(3)",
             "CSE227-System Analysis and Design(3)",
-            "CSE228-Theory of Computation"
+            "CSE228-Theory of Computation(3)"
         ]
     },
     spring2025: {
         tuitionFees: 98400,
         courses: [
-            // Course list for Spring 2025
+            "CSE311-Database Management System(3)",
+            "CSE312-DBMS Lab(1.5)",
+            "CSE313-Compiler Design(3)",
+            "CSE314-CD Lab(1.5)",
+            "CSE315-Software Engineering(3)",
+            "CSE316-Artificial Intelligence(3)",
+            "CSE317-Microprocessor and Microcontrollers(3)",
+            "STA101-Statistics and Probability(3)"
         ]
     },
     fall2025: {
         tuitionFees: 98400,
         courses: [
-            // Course list for Fall 2025
+            "CSE321-Computer Networks(3)",
+            "CSE322-CN Lab(1.5)",
+            "CSE323-Operating Systems(3)",
+            "CSE324-OS Labs(1.5)",
+            "CSE325-Instrumentation and Control(3)",
+            "CSE326-Social and Professional Issues in Computing(3)",
+            "ACT327-Financial and Managerial Accounting(3)",
+            "CSE***-Elective-I(3)"
         ]
     },
     spring2026: {
         tuitionFees: 90600,
         courses: [
-            // Course list for Spring 2026
+            "CSE411-Computer Graphics(3)",
+            "CSE412-CG Labs(1.5)",
+            "CSE413-Computer Architecture and Organization(3)",
+            "CSE***-Elective-II(3)",
+            "CSE***-Elective-III(3)",
+            "CSE***-Elective-IV(3)",
+            "CSE498-FYDP/Capstone Project Phase(3)"
         ]
     },
     fall2026: {
         tuitionFees: 48500,
         courses: [
-            // Course list for Fall 2026
+            "ECO426-Engineering Economics(3)",
+            "CSE***-Elective-V(3)",
+            "CSE***-Elective-VI(3)",
+            "CSE499-FYDP/Capstone Project Phase(3)"
         ]
     }
 };
@@ -53,8 +76,8 @@ function updateSemester() {
                 <p><strong>Registration Fees:</strong> 20250</p>
                 <p><strong>Initial Payment:</strong> 12000</p>
                 <p><strong>Remaining Fees after Initial Payment:</strong> ${(tuitionFees - 12000).toFixed(2)}</p>
-                <p><strong>Amount to be paid before Mid-Term:</strong> ${(tuitionFees - 12000) / 2}</p>
-                <p><strong>Amount to be paid before Final-Term:</strong> ${(tuitionFees - 12000) / 2}</p>
+                <p><strong>Amount to be paid before Mid-Term:</strong> ${((tuitionFees - 12000) / 2).toFixed(2)}</p>
+                <p><strong>Amount to be paid before Final-Term:</strong> ${((tuitionFees - 12000) / 2).toFixed(2)}</p>
                 <hr>
             </div>
             <div style="flex: 1; padding: 10px;">
@@ -82,8 +105,8 @@ function calculatePayment() {
         waiverPercentage = selectedPercentage;
     }
 
-    if (waiverPercentage === '' || isNaN(waiverPercentage)) {
-        alert('Please enter a valid waiver percentage.');
+    if (waiverPercentage === '' || isNaN(waiverPercentage) || waiverPercentage < 0 || waiverPercentage > 100) {
+        displayError('Please enter a valid waiver percentage between 0 and 100.');
         return;
     }
 
@@ -107,6 +130,15 @@ function calculatePayment() {
         <p><strong>Amount to be paid before Mid-Term:</strong> ${midTermPaymentAfterWaiver.toFixed(2)}</p>
         <p><strong>Amount to be paid before Final-Term:</strong> ${finalTermPaymentAfterWaiver.toFixed(2)}</p>
     `;
+
+    clearError();
+}
+
+function resetForm() {
+    document.getElementById('results').innerHTML = '';
+    clearError();
+    clearWaiverInput();
+    clearWaiverSelect();
 }
 
 function clearWaiverInput() {
@@ -115,6 +147,16 @@ function clearWaiverInput() {
 
 function clearWaiverSelect() {
     document.getElementById('waiverPercentageSelect').value = '';
+}
+
+function displayError(message) {
+    const errorDiv = document.getElementById('error');
+    errorDiv.textContent = message;
+}
+
+function clearError() {
+    const errorDiv = document.getElementById('error');
+    errorDiv.textContent = '';
 }
 
 updateSemester();
