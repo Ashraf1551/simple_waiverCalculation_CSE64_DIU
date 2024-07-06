@@ -9,7 +9,7 @@ body {
 .container {
     max-width: 600px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: #f2f0eb; /* New background color for container */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -46,7 +46,9 @@ h1 {
 }
 
 .semester-selection {
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Adjusted margin */
+    background-color: #f9f6f1; /* Background color before input selection */
+    padding: 10px; /* Added padding for separation */
 }
 
 .semester-selection label {
@@ -83,10 +85,13 @@ h1 {
 }
 
 .input-section {
+    margin-top: 10px; /* Adjusted margin */
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #f9f6f1; /* Background color after input selection */
+    padding: 20px; /* Added padding for separation */
 }
 
 .input-group {
